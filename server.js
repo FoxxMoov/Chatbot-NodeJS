@@ -13,6 +13,15 @@ app.get("/hello", function (req, res) {
   }
 });
 
+app.use(express.json());
+app.post("/chat", function (req, res) {
+  if (req.body.msg === "météo") {
+    res.send("Il fait beau");
+  } else if (req.body.msg === "ville") {
+    res.send("Nous sommes à Paris");
+  }
+});
+
 app.listen(process.env.PORT || 3000, function () {
   console.log("Example app listening on port " + process.env.PORT + " !");
 });

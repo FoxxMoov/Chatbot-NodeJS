@@ -66,3 +66,25 @@ $ curl https://chat-bot-mongodb.herokuapp.com/hello
 ```
 
 Send "**Quel est votre nom ?**"
+
+# Exercice 4
+
+```
+$ curl -X POST --header "Content-Type: application/json" --data "{\"msg\":\"ville\"}" http://localhost:3000/chat
+```
+
+```
+$ curl -X POST --header "Content-Type: application/json" --data "{\"msg\":\"ville\"}" https://chat-bot-mongodb.herokuapp.com/chat
+```
+
+Send "**Nous sommes à Paris**"
+
+```
+$ curl -X POST --header "Content-Type: application/json" --data "{\"msg\":\"météo\"}" http://localhost:3000/chat
+```
+
+```
+$ curl -X POST --header "Content-Type: application/json" --data "{\"msg\":\"météo\"}" https://chat-bot-mongodb.herokuapp.com/chat
+```
+
+Send "**Il fait beau**"
