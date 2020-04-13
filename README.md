@@ -120,3 +120,15 @@ $ curl -X POST --header "Content-Type: application/json" --data "{\"msg\":\"dema
 ```
 
 Send "**demain: Mercredi**"
+
+# Partie 2 :
+
+============
+
+# Exercice 1
+
+```
+$ node dates.js
+```
+
+Register the actual date & console log all dates registered in DB
