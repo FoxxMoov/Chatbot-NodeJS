@@ -34,3 +34,35 @@ $ curl https://chat-bot-mongodb.herokuapp.com/
 ```
 
 Send "**Hello World**" (online version)
+
+# Exercice 3
+
+```
+$ curl http://localhost:3000/hello?nom=Sasha
+```
+
+```
+$ curl https://chat-bot-mongodb.herokuapp.com/hello?nom=Sasha
+```
+
+Send "**Bonjour, Sasha !**"
+
+```
+$ curl http://localhost:3000/hello?nom=Michel
+```
+
+```
+$ curl https://chat-bot-mongodb.herokuapp.com/hello?nom=Michel
+```
+
+Send"**Bonjour, Michel !**"
+
+```
+$ curl http://localhost:3000/hello
+```
+
+```
+$ curl https://chat-bot-mongodb.herokuapp.com/hello
+```
+
+Send "**Quel est votre nom ?**"
