@@ -88,3 +88,35 @@ $ curl -X POST --header "Content-Type: application/json" --data "{\"msg\":\"mét
 ```
 
 Send "**Il fait beau**"
+
+# Exercice 5
+
+```
+$ curl -X POST --header "Content-Type: application/json" --data "{\"msg\":\"demain\"}" http://localhost:3000/chat
+```
+
+```
+$ curl -X POST --header "Content-Type: application/json" --data "{\"msg\":\"demain\"}" https://chat-bot-mongodb.herokuapp.com/chat
+```
+
+Send "**Je ne connais pas demain...**"
+
+```
+$ curl -X POST --header "Content-Type: application/json" --data "{\"msg\":\"demain = Mercredi\"}" http://localhost:3000/chat
+```
+
+```
+$ curl -X POST --header "Content-Type: application/json" --data "{\"msg\":\"demain = Mercredi\"}" https://chat-bot-mongodb.herokuapp.com/chat
+```
+
+Send "**Merci pour cette information !**"
+
+```
+$ curl -X POST --header "Content-Type: application/json" --data "{\"msg\":\"demain\"}" http://localhost:3000/chat
+```
+
+```
+$ curl -X POST --header "Content-Type: application/json" --data "{\"msg\":\"demain\"}" https://chat-bot-mongodb.herokuapp.com/chat
+```
+
+Send "**demain: Mercredi**"
