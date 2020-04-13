@@ -3,9 +3,9 @@ const app = express();
 const bodyParser = require("body-parser");
 const MongoClient = require("mongodb").MongoClient;
 const fs = require("fs");
+require("dotenv").config();
 const PORT = process.env.PORT || 3000;
-const url =
-  "mongodb+srv://Coco:californiaofw282*@cluster0-imjyy.azure.mongodb.net/test?retryWrites=true&w=majority";
+const url = process.env.MONGODB_URI;
 const dbName = "chat-bot";
 const client = new MongoClient(url);
 const FICHIER_REPONSES = "réponses.json";
