@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3000;
 
 const FICHIER_REPONSES = "réponses.json";
 
-console.log("Lecture des réponses depuis", FICHIER_REPONSES);
+console.log("Lecture des réponses depuis le fichier : ", FICHIER_REPONSES);
 
 function readFileAsPromised(file, encoding) {
   return new Promise((resolve, reject) => {
