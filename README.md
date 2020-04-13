@@ -152,3 +152,25 @@ $ curl -X DELETE http://localhost:3000/messages/last
 ```
 
 Delete the last conversation (from the DB)
+
+# Exercice 3
+
+URL of the APP : https://chat-bot-mongodb.herokuapp.com/
+
+```
+$ curl -X POST --header "Content-Type: application/json" --data "{\"msg\":\"ville\"}" https://chatbot-node-app.herokuapp.com/chat
+```
+
+Send "**Nous sommes à Paris**" & adding messages from bot & user to DB
+
+```
+$ curl -X GET https://chatbot-node-app.herokuapp.com/messages/all
+```
+
+Displays the history of conversations (from the DB)
+
+```
+$ curl -X DELETE https://chatbot-node-app.herokuapp.com/messages/last
+```
+
+Delete the last conversation (from the DB)
