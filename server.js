@@ -1,13 +1,14 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
+const MongoClient = require("mongodb").MongoClient;
 const fs = require("fs");
-
 const PORT = process.env.PORT || 3000;
-
+const url =
+  "mongodb+srv://Coco:californiaofw282*@cluster0-imjyy.azure.mongodb.net/test?retryWrites=true&w=majority";
+const dbName = "chat-bot";
+const client = new MongoClient(url);
 const FICHIER_REPONSES = "réponses.json";
-
-console.log("Lecture des réponses depuis le fichier : ", FICHIER_REPONSES);
 
 function readFileAsPromised(file, encoding) {
   return new Promise((resolve, reject) => {
@@ -33,6 +34,10 @@ function writeFileAsPromised(file, data) {
 const promesseReponses = readFileAsPromised(FICHIER_REPONSES, "utf8");
 
 (async () => {
+  await client.connect();
+  const db = client.db(dbName);
+  const collection = db.collection("messages");
+
   let data;
   try {
     data = await promesseReponses;
@@ -61,7 +66,20 @@ const promesseReponses = readFileAsPromised(FICHIER_REPONSES, "utf8");
     if (request === "météo") {
       res.send("Il fait beau");
     } else if (request === "ville") {
-      res.send("Nous sommes à Paris");
+      const message = "Nous sommes à Paris";
+      const messageBot = { from: "user", msg: req.body.msg };
+      const messageUser = { from: "bot", msg: message };
+      try {
+        collection.insertOne(messageBot, function (err) {
+          if (err) throw err;
+        });
+        collection.insertOne(messageUser, function (err) {
+          if (err) throw err;
+        });
+        res.send(message);
+      } catch (err) {
+        console.error(err);
+      }
     } else if (request != -1) {
       if (request.search(" = ") == -1) {
         if (info[request] == undefined) {
@@ -81,6 +99,37 @@ const promesseReponses = readFileAsPromised(FICHIER_REPONSES, "utf8");
           res.send("Erreur... Reessayez plus tard.");
         }
       }
+    }
+  });
+
+  app.get("/messages/all", async function (req, res) {
+    try {
+      const response = await collection
+        .find({}, { projection: { _id: 0, from: 1, msg: 1 } })
+        .toArray();
+      res.send(response);
+    } catch (err) {
+      console.error(err);
+    }
+  });
+
+  app.delete("/messages/last", async function (req, res) {
+    const msgBot = await collection
+      .find({ from: "bot" })
+      .sort({ _id: -1 })
+      .limit(1)
+      .toArray();
+    const msgUser = await collection
+      .find({ from: "user" })
+      .sort({ _id: -1 })
+      .limit(1)
+      .toArray();
+    try {
+      await collection.deleteOne(msgBot[0]);
+      await collection.deleteOne(msgUser[0]);
+      res.send("Messages supprimés");
+    } catch (err) {
+      console.error(err);
     }
   });
 

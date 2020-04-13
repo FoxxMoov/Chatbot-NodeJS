@@ -132,3 +132,23 @@ $ node dates.js
 ```
 
 Register the actual date & console log all dates registered in DB
+
+# Exercice 2
+
+```
+$ curl -X POST --header "Content-Type: application/json" --data "{\"msg\":\"ville\"}" http://localhost:3000/chat
+```
+
+Send "**Nous sommes à Paris**" & adding messages from bot & user to DB
+
+```
+$ curl -X GET http://localhost:3000/messages/all
+```
+
+Displays the history of conversations (from the DB)
+
+```
+$ curl -X DELETE http://localhost:3000/messages/last
+```
+
+Delete the last conversation (from the DB)
