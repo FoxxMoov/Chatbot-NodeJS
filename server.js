@@ -3,6 +3,8 @@ const app = express();
 const bodyParser = require("body-parser");
 const fs = require("fs");
 
+const PORT = process.env.PORT || 3000;
+
 const FICHIER_REPONSES = "réponses.json";
 
 console.log("Lecture des réponses depuis", FICHIER_REPONSES);
@@ -82,7 +84,7 @@ const promesseReponses = readFileAsPromised(FICHIER_REPONSES, "utf8");
     }
   });
 
-  app.listen(process.env.PORT || 3000, function () {
-    console.log("Example app listening on port " + process.env.PORT + " !");
+  app.listen(PORT, function () {
+    console.log("Example app listening on port " + PORT + " !");
   });
 })();
