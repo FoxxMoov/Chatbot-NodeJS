@@ -30,7 +30,7 @@ $ curl http://localhost:3000/
 Send "**Hello World**" (local version)
 
 ```
-$ curl https://chat-bot-mongodb.herokuapp.com/
+$ curl https://chatbot-node-app.herokuapp.com/
 ```
 
 Send "**Hello World**" (online version)
@@ -42,7 +42,7 @@ $ curl http://localhost:3000/hello?nom=Sasha
 ```
 
 ```
-$ curl https://chat-bot-mongodb.herokuapp.com/hello?nom=Sasha
+$ curl https://chatbot-node-app.herokuapp.com/hello?nom=Sasha
 ```
 
 Send "**Bonjour, Sasha !**"
@@ -52,7 +52,7 @@ $ curl http://localhost:3000/hello?nom=Michel
 ```
 
 ```
-$ curl https://chat-bot-mongodb.herokuapp.com/hello?nom=Michel
+$ curl https://chatbot-node-app.herokuapp.com/hello?nom=Michel
 ```
 
 Send"**Bonjour, Michel !**"
@@ -62,7 +62,7 @@ $ curl http://localhost:3000/hello
 ```
 
 ```
-$ curl https://chat-bot-mongodb.herokuapp.com/hello
+$ curl https://chatbot-node-app.herokuapp.com/hello
 ```
 
 Send "**Quel est votre nom ?**"
@@ -74,7 +74,7 @@ $ curl -X POST --header "Content-Type: application/json" --data "{\"msg\":\"vill
 ```
 
 ```
-$ curl -X POST --header "Content-Type: application/json" --data "{\"msg\":\"ville\"}" https://chat-bot-mongodb.herokuapp.com/chat
+$ curl -X POST --header "Content-Type: application/json" --data "{\"msg\":\"ville\"}" https://chatbot-node-app.herokuapp.com/chat
 ```
 
 Send "**Nous sommes à Paris**"
@@ -84,7 +84,7 @@ $ curl -X POST --header "Content-Type: application/json" --data "{\"msg\":\"mét
 ```
 
 ```
-$ curl -X POST --header "Content-Type: application/json" --data "{\"msg\":\"météo\"}" https://chat-bot-mongodb.herokuapp.com/chat
+$ curl -X POST --header "Content-Type: application/json" --data "{\"msg\":\"météo\"}" https://chatbot-node-app.herokuapp.com/chat
 ```
 
 Send "**Il fait beau**"
@@ -96,7 +96,7 @@ $ curl -X POST --header "Content-Type: application/json" --data "{\"msg\":\"dema
 ```
 
 ```
-$ curl -X POST --header "Content-Type: application/json" --data "{\"msg\":\"demain\"}" https://chat-bot-mongodb.herokuapp.com/chat
+$ curl -X POST --header "Content-Type: application/json" --data "{\"msg\":\"demain\"}" https://chatbot-node-app.herokuapp.com/chat
 ```
 
 Send "**Je ne connais pas demain...**"
@@ -106,7 +106,7 @@ $ curl -X POST --header "Content-Type: application/json" --data "{\"msg\":\"dema
 ```
 
 ```
-$ curl -X POST --header "Content-Type: application/json" --data "{\"msg\":\"demain = Mercredi\"}" https://chat-bot-mongodb.herokuapp.com/chat
+$ curl -X POST --header "Content-Type: application/json" --data "{\"msg\":\"demain = Mercredi\"}" https://chatbot-node-app.herokuapp.com/chat
 ```
 
 Send "**Merci pour cette information !**"
@@ -116,7 +116,7 @@ $ curl -X POST --header "Content-Type: application/json" --data "{\"msg\":\"dema
 ```
 
 ```
-$ curl -X POST --header "Content-Type: application/json" --data "{\"msg\":\"demain\"}" https://chat-bot-mongodb.herokuapp.com/chat
+$ curl -X POST --header "Content-Type: application/json" --data "{\"msg\":\"demain\"}" https://chatbot-node-app.herokuapp.com/chat
 ```
 
 Send "**demain: Mercredi**"
